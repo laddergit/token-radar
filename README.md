@@ -23,7 +23,7 @@ node main.ts
 ## Layout
 
 - `main.ts` — the program (Node 22+, standard library only)
-- `data/snapshot.json` — the sealed snapshot in house format (as_of 2026-11-14, sha256 42a71213…; the grader mounts its own copy at `/input/snapshot.json`)
+- `data/snapshot.json` — the sealed snapshot's content in house format, stored compactly (as_of 2026-11-14, sha256 37e87e0c…; the grader mounts its own sealed copy at `/input/snapshot.json`)
 - `dashboard/` — the static page (renders with no network): board, detail view per protocol, filters
 - `screenshots/` — the board, a detail view and a filtered view
 - `out/` — the last local run's output (`board.json`, `dashboard/`, `dossier.json`)

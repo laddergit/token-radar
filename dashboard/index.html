@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Launch Radar — every tokenless DeFi protocol, ranked by implied launch value</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">&#9678;</span>
+      <div>
+        <h1>Token Launch Radar</h1>
+        <p class="tagline">Every tokenless DeFi protocol, ranked by what its launch would be worth.</p>
+      </div>
+    </div>
+    <div class="snapshot" id="snapshotLine">Snapshot: DefiLlama protocols</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="stats" id="stats" aria-label="Board totals"></section>
+
+  <section class="controls" aria-label="Filters">
+    <input id="q" type="search" placeholder="Search protocol…" autocomplete="off">
+    <select id="category" aria-label="Category"><option value="">All categories</option></select>
+    <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+    <select id="confidence" aria-label="Confidence">
+      <option value="">Any confidence</option>
+      <option value="High">High confidence</option>
+      <option value="Medium">Medium confidence</option>
+      <option value="Low">Low confidence</option>
+    </select>
+    <select id="sort" aria-label="Sort by">
+      <option value="implied">Sort: implied value ↓</option>
+      <option value="tvl">Sort: TVL ↓</option>
+      <option value="multiple">Sort: multiple ↓</option>
+      <option value="name">Sort: name A–Z</option>
+    </select>
+    <button id="reset" type="button">Reset</button>
+  </section>
+
+  <section id="detail" class="detail" hidden></section>
+
+  <section id="boardWrap">
+    <div class="table-meta"><span id="resultCount"></span><span class="hint">Click any row for its detail view and farm plan.</span></div>
+    <div class="table-scroll">
+      <table id="board">
+        <thead>
+          <tr>
+            <th class="num">#</th>
+            <th>Protocol</th>
+            <th>Category</th>
+            <th class="num">TVL</th>
+            <th class="num">Implied value</th>
+            <th class="num">Multiple</th>
+            <th>Main chain</th>
+            <th class="num">TVL 7d</th>
+            <th>Confidence</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <nav class="pager" id="pager" aria-label="Pages"></nav>
+  </section>
+
+  <section class="method" id="method">
+    <h2>How the ranking works</h2>
+    <div class="method-grid" id="methodBody"></div>
+    <h3>What this radar does not do</h3>
+    <ul>
+      <li>It cannot see points programs, Discord roles or private fundraisings — the farm plan tells you how to check for them per protocol.</li>
+      <li>TVL multiples undervalue volume businesses (prediction markets, perps venues) whose money is made on flow, not on locked capital. The category median partly corrects for this, but treat the implied value as an order-of-magnitude estimate, not a price target.</li>
+      <li>A protocol can stay tokenless forever. Farming is a bet on a launch that may never happen — never deposit more than you can lose.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Data: DefiLlama public protocols API, sealed snapshot <span id="footSnapshot"></span>. Analysis runs locally in <code>main.ts</code> — no live prices, no tracking, no network calls from this page.</p>
+    <p>Not financial advice. Implied values are model estimates from TVL multiples, not valuations. Always verify a protocol's official site from DefiLlama before connecting a wallet.</p>
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

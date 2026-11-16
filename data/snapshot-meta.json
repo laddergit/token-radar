@@ -1,0 +1,8 @@
+{
+  "source": "DefiLlama https://api.llama.fi/protocols, fetched 2026-11-14T01:18:33.201Z",
+  "as_of": "2026-11-14",
+  "protocols": 758,
+  "watchlist": 40,
+  "sha256": "42a71213519479f3a180cc5010cbbf6bd18a2447fa0ad29e4c5122b6c9184393",
+  "note": "Sealed house snapshot from the kit (input/snapshot.json); the grader mounts its own copy at /input/snapshot.json."
+}

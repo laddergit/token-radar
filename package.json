@@ -1,0 +1,1 @@
+{"description":"Token Launch Radar — ranks every tokenless DeFi protocol by the implied value of its future token, from a sealed DefiLlama snapshot, with a farm plan for each.","engines":{"node":">=22.18"},"license":"MIT","name":"token-radar","scripts":{"build":"node main.ts","refresh":"node main.ts --refresh"},"type":"module","version":"1.0.0"}
